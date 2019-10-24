@@ -55,16 +55,16 @@ Write code to create the class structure provided in the attached “UML (unifie
 - [x] Add the following functionalities to the part screens, using the methods provided in the attached “UML Class Diagram”:
 
 _“Add Part” screen_
-    * select “In-House” or “Outsourced”
-    * enter name, inventory level, price, max and min values, and company name or machine ID
-    * save the data and then redirect to the main screen
-    * cancel or exit out of this screen and go back to the main screen
+  * select “In-House” or “Outsourced”
+  * enter name, inventory level, price, max and min values, and company name or machine ID
+  * save the data and then redirect to the main screen
+  * cancel or exit out of this screen and go back to the main screen
 
 _“Modify Part” screen_
-    * select “In-House” or “Outsourced”
-    * modify or change data values
-    * save modifications to the data and then redirect to the main screen
-    * cancel or exit out of this screen and go back to the main screen
+  * select “In-House” or “Outsourced”
+  * modify or change data values
+  * save modifications to the data and then redirect to the main screen
+  * cancel or exit out of this screen and go back to the main screen
 
 - [x] Add the following functionalities to the product screens, using the methods provided in the attached “UML Class Diagram”:
 
