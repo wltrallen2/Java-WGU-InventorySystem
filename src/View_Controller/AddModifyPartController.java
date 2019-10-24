@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Built as part of the class requirements for
+ * Western Governor's University Software I - C482.
+ *
  */
 package View_Controller;
 
@@ -19,52 +19,51 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 
 /**
- * FXML Controller class
+ * FXML Controller class, a subclass of SecondaryController,
+ * that allows the user to add a new part or modify the
+ * information for an existing part.
  *
  * @author walterallen
  */
 public class AddModifyPartController extends SecondaryController implements Initializable {
 
-    @FXML
-    private Label screenLabel;
-    @FXML
-    private RadioButton sourceRadioInHouse;
-    @FXML
-    private ToggleGroup Source;
-    @FXML
-    private RadioButton sourceRadioOutSourced;
-    @FXML
-    private Label idLabel;
-    @FXML
-    private TextField nameTextField;
-    @FXML
-    private TextField invTextField;
-    @FXML
-    private TextField priceTextField;
-    @FXML
-    private TextField maxTextField;
-    @FXML
-    private TextField minTextField;
-    @FXML
-    private TextField extraTextField;
-    @FXML
-    private Label extraLabel;
-    @FXML
-    private Button saveButton;
-    @FXML
-    private Button cancelButton;
+    @FXML private Label screenLabel;
+    
+    @FXML private ToggleGroup Source;
+    @FXML private RadioButton sourceRadioInHouse;
+    @FXML private RadioButton sourceRadioOutSourced;
+    
+    @FXML private Label idLabel;
+    @FXML private TextField nameTextField;
+    @FXML private TextField invTextField;
+    @FXML private TextField priceTextField;
+    @FXML private TextField maxTextField;
+    @FXML private TextField minTextField;
+    @FXML private TextField extraTextField;
+    @FXML private Label extraLabel;
+    
+    @FXML private Button saveButton;
+    @FXML private Button cancelButton;
     
     private Part currentPart;
 
-    /**
-     * Initializes the controller class.
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     }
 
+    /**
+     * Saves the form's part or product into the inventory. The method identifies
+     * whether the user has selected the In-House or Outsources radio button and
+     * creates a new Part or Product from the data in the user fields. Then, if the
+     * user navigated to this scene by selecting a current part, the method
+     * overwrites the part in the inventory with the new information. Else,
+     * the method saves the new part to the inventory. Finally, the method
+     * closes (hides) the scene.
+     * 
+     * @param event the ActionEvent that called the method
+     */
     @FXML
-    private void saveHandler(ActionEvent event) throws IOException {
+    private void saveHandler(ActionEvent event) {
         String name = nameTextField.getText();
         int stock = new Integer(invTextField.getText());
         double price = new Double(priceTextField.getText());
@@ -95,11 +94,22 @@ public class AddModifyPartController extends SecondaryController implements Init
         cancelButton.getScene().getWindow().hide();
     }
 
+    /**
+     * Closes (hides) the scene.
+     * 
+     * @param event the ActionEvent that called the method
+     */
     @FXML
-    private void cancelHandler(ActionEvent event) throws IOException {
+    private void cancelHandler(ActionEvent event) {
         cancelButton.getScene().getWindow().hide();
     }
     
+    /**
+     * Updates the GUI to display the correct fields for either a in-house or
+     * outsourced part.
+     * 
+     * @param event the ActionEvent that called the method
+     */
     @FXML
     private void radioHandler(ActionEvent event) {
         updateDisplayForRadioHandler();
@@ -109,11 +119,25 @@ public class AddModifyPartController extends SecondaryController implements Init
      * GETTERS/SETTERS
      *********************************************************/
 
+    /**
+     * Sets the current part for the form and populates the user fields with
+     * the information from the Part instance.
+     * 
+     * @param part a Part instance representing the part which the user would
+     * like to modify.
+     */
     public void setCurrentPart(Part part) {
         this.currentPart = part;
         populateTextFieldsWithCurrentPart();
     }
     
+    /**
+     * Sets the label at the top of the scene to identify the purpose of the
+     * scene to the user. Typically used to identify whether the screen is meant
+     * to modify an existing part or add a new part.
+     * 
+     * @param text a String representing the text to display in the label
+     */
     public void setScreenLabel(String text) {
         screenLabel.setText(text);
     }
@@ -122,6 +146,11 @@ public class AddModifyPartController extends SecondaryController implements Init
      * HELPER METHODS
      *********************************************************/
         
+    /**
+     * Updates the text for the extraLabel, which indicates whether the form is
+     * displaying the company name for an outsourced part or a machine id for an
+     * in-house part.
+     */
     private void updateDisplayForRadioHandler() {
         if(Source.getSelectedToggle().equals(sourceRadioOutSourced)) {
             extraLabel.setText("Company Name");
@@ -130,6 +159,12 @@ public class AddModifyPartController extends SecondaryController implements Init
         }
     }
     
+    /**
+     * Populates the text fields with data from the Part stored in the currentPart
+     * instance variable. First, the method identifies whether the currentPart
+     * is outsourced or in-house and adjusts the display accordingly. Then the
+     * method sets the labels and text fields with the appropriate information.
+     */
     public void populateTextFieldsWithCurrentPart() {
         if(currentPart != null) {
             if(currentPart instanceof Outsourced) {

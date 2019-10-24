@@ -1,14 +1,11 @@
 package alleninventorysystem;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Built as part of the class requirements for
+ * Western Governor's University Software I - C482.
+ *
  */
 
-
-import java.io.File;
-import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
