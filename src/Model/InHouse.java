@@ -6,7 +6,7 @@
 package Model;
 
 /**
- * Represents an in-house item in the inventory. 
+ * Represents an in-house part in the inventory. 
  * 
  * @author walterallen
  */
@@ -51,7 +51,7 @@ public class InHouse extends Part {
     /**
      * Returns a string representation of this in-house part that includes the
      * part&#39s id number, name, price, stock, minimum quantity on hand, maximum
-     * quanitity on hand, and machine id number.
+     * quantity on hand, and machine id number.
      * 
      * @return a string representation of this in-house part.
      */
