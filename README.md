@@ -54,13 +54,13 @@ Write code to create the class structure provided in the attached “UML (unifie
  
 - [x] Add the following functionalities to the part screens, using the methods provided in the attached “UML Class Diagram”:
 
-_*“Add Part” screen*_
+_*“Add Part” screen *_
     * select “In-House” or “Outsourced”
     * enter name, inventory level, price, max and min values, and company name or machine ID
     * save the data and then redirect to the main screen
     * cancel or exit out of this screen and go back to the main screen
 
-_*“Modify Part” screen*_
+_*“Modify Part” screen *_
     * select “In-House” or “Outsourced”
     * modify or change data values
     * save modifications to the data and then redirect to the main screen
@@ -68,14 +68,14 @@ _*“Modify Part” screen*_
 
 - [x] Add the following functionalities to the product screens, using the methods provided in the attached “UML Class Diagram”:
 
-_*“Add Product” screen*_
+_*“Add Product” screen *_
    * enter name, inventory level, price, and max and min values
    * save the data and then redirect to the main screen
    * associate one or more parts with a product
    * remove or disassociate a part from a product
    * cancel or exit out of this screen and go back to the main screen
 
-_*“Modify Product” screen*_
+_*“Modify Product” screen *_
    * modify or change data values
    * save modifications to the data and then redirect to the main screen
    * associate one or more parts with a product
@@ -84,13 +84,13 @@ _*“Modify Product” screen*_
 
 - [x] Write code to implement exception controls with custom error messages for one requirement out of each of the following sets (pick one from each):
 
-_*Set 1*_
+_*Set 1 *_
    * entering an inventory value that exceeds the minimum or maximum value for that part or product
    * preventing the minimum field from having a value above the maximum field
    * preventing the maximum field from having a value below the minimum field
    * **(SELECTED) ensuring that a product must always have at least one part**
 
-_*Set 2*_
+_*Set 2 *_
    * including a confirm dialogue for all “Delete” and “Cancel” buttons
    * **(SELECTED) ensuring that the price of a product cannot be less than the cost of the parts**
    * ensuring that a product must have a name, price, category, and inventory level (default 0)
