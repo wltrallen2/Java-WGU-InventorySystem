@@ -147,7 +147,7 @@ public class AddModifyProductController extends SecondaryController implements I
      * listed in the "Delete Part" table). To do this, the method first checks to
      * make sure that product has at least one product associated with it,and if not,
      * displays a warning. Additionally, the product checks to ensure that the price
-     * of the product is greater than the cumulative price of all parts tha make
+     * of the product is greater than the cumulative price of all parts that make
      * up the product, and if not, displays a warning. Finally, the method then
      * overwrites the original product if the user navigated to this scene by
      * selecting a product to modify or adds the new product to the inventory
